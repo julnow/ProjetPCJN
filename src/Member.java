@@ -40,4 +40,8 @@ public abstract class Member {
 	public ArrayList<Service> getCompetences(){
 		return this.competences;
 	}
+	public Task commandTask(Service s, int duration, int nbPerson){
+		return new Task(s, this, duration, nbPerson );
+		
+	}
 }
