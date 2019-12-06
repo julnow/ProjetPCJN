@@ -5,7 +5,7 @@ public class Network {
 	private String password;
 	private ArrayList<Member> members;
 	
-	Network(String password){
+	public Network(String password){
 		this.members = new ArrayList<Member>();
 		this.password = password;
 		
