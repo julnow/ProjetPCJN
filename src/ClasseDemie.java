@@ -4,7 +4,7 @@ public class ClasseDemie extends Member {
 	
 	public ClasseDemie(String name) {	
 		super(name);
-		classFactor = 0.5;
+		classFactor = 0.005;
 	}
 		
 		public double getclassFactor() {			
