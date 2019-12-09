@@ -15,21 +15,11 @@ public class Admin extends ClasseNormal {
 		}
 
 		public void addMember(Network n, Member m ) {
-			try {
-				n.addMember(m, password);
-			}
-			catch (Exception e) {
-				System.out.println(e);
-			}
+			n.addMember(m, password);
 		}
 		
 		public void removeMember( Network n, Member m) {
-			try {
-				n.removeMember(m.getName(), password);
-			}
-			catch (Exception e) {
-				System.out.println(e);
-			}	
+			n.removeMember(m.getName(), password);
 		}
 		
 		public void validateTask(Task t, Network n) {
