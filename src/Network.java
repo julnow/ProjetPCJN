@@ -13,7 +13,7 @@ public class Network {
 	
 	public void addMember (Member m, String pass)throws Exception {
 		if (pass != password)
-			throw new Exception("incorrect password");
+			throw new Exception("incorrect password!");
 		else
 			this.members.add(m);
 		
@@ -21,7 +21,7 @@ public class Network {
 	
 	public void removeMember(String name, String pass) throws Exception {
 		if (pass != password) 
-			throw new Exception("incorrect password");
+			throw new Exception("incorrect password!");
 		else{
 			boolean found = false;
 			while(!found) {

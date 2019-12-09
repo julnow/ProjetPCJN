@@ -30,7 +30,7 @@ public class Admin extends ClasseNormal {
 			catch (Exception e) {
 				System.out.println(e);
 			}	
-		}
+		}//test
 		
 		public void validateTask(Task t, Network n) {
 			if( t.getBeneficient().getJetons() >= t.payment()  && (t.getNbPerson() <= n.nbCompetence(t.getService())) ){
