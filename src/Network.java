@@ -11,20 +11,28 @@ public class Network {
 		
 	}
 	
-	public void addMember(Member m, String pass) {
-		if (pass == password)
+	public void addMember (Member m, String pass)throws Exception {
+		if (pass != password)
+			throw new Exception("incorrect password");
+		else
 			this.members.add(m);
-		/// exceptions!!
+		
 	}
 	
-	public void removeMember(String name, String pass) {
-		if (pass == password) {
-			for(int i = 0; i < members.size(); ++i) {
-				if (members.get(i).getName() == name) {
-					members.remove(i);
-					break;
-				}		
+	public void removeMember(String name, String pass) throws Exception {
+		if (pass != password) 
+			throw new Exception("incorrect password");
+		else{
+			boolean found = false;
+			while(!found) {
+				for(int i = 0; i < members.size(); ++i) {
+					if (members.get(i).getName() == name) {
+						members.remove(i);
+						found = true;	
+					}
+				}
 			}
+			if (!found) throw new Exception("no such member in the network");
 		}
 	}
 	
