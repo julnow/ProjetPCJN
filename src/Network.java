@@ -11,7 +11,7 @@ public class Network {
 		
 	}
 	
-
+//testowa zmiana
 	public void addMember (Member m, String pass)throws Exception {
 		if (pass != password)
 			throw new Exception("incorrect password");
