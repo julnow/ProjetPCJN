@@ -1,18 +1,6 @@
 
 public class Program {
 	
-	
-	public void execute (void instruction()){
-		try{
-			instruction();
-			
-		}
-		catch (Exception e){
-			System.out.println(e);
-			
-		}
-		
-	}
 
 	public static void main(String[] args) {
 		Admin admin = new Admin("admin", "admin123");
@@ -23,6 +11,9 @@ public class Program {
 		admin.addMember(network1, katia);
 		admin.addMember(network1, pablo);
 		admin.addMember(network1, john);
+		
+		Member nicolas = new ClasseNormal("nicolas");
+		network1.addMember(nicolas, "pass123");
 		
 		Service netoyage = new Service("netoyage", 15);
 		Service jardinage = new Service("jardinage", 10);
