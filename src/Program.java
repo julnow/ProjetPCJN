@@ -27,9 +27,13 @@ public class Program {
 		john.addCompetence(lavage);
 		john.addCompetence(netoyage);
 		
+		
+		
 		System.out.println("John: " + john.getJetons() + "Katia: "+ katia.getJetons() +  "Pablo: " + pablo.getJetons());
 		
 		Task task1 = john.commandTask(jardinage, 2, 1);
+		System.out.println(task1.getNbPerson());
+		System.out.println(network1.nbCompetence(task1.getService()));
 		
 		admin.validateTask(task1, network1);
 		

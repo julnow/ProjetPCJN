@@ -12,12 +12,12 @@ public class Network {
 	}
 	
 
+
 	public void addMember (Member m, String pass)throws Exception {
 		if (pass != password)
 			throw new Exception("incorrect password");
 		else
 			this.members.add(m);
-		/// exceptions!!
 	}
 	
 
@@ -27,7 +27,7 @@ public class Network {
 		else{
 			boolean found = false;
 			while(!found) {
-				for(int i = 0; i < members.size(); ++i) {
+				for(int i = 0; i < members.size()-1; ++i) {
 					if (members.get(i).getName() == name) {
 						members.remove(i);
 						found = true;	
@@ -42,10 +42,10 @@ public class Network {
 		return this.members.size();
 	}
 	
-	public int nbCompetence (Service s) {
+	public int nbCompetence (Service s) { // NIE DZIAŁA zwraca 0 zawsze chyba
 		int count = 0;
-		for(int i = 0; i<this.members.size(); ++i) {
-			for(int j = 0; j < this.members.get(i).getCompetences().size(); ++i) {
+		for(int i = 0; i<this.members.size() -1; ++i) {
+			for(int j = 0; j < this.members.get(i).getCompetences().size()-1; ++j) {
 				if(s == this.members.get(i).getCompetences().get(j))
 					++count;		
 			}	
@@ -56,8 +56,8 @@ public class Network {
 	
 	public ArrayList<Member> haveCompetence (Service s){
 		ArrayList<Member> can = new ArrayList<Member>();
-		for(int i = 0; i<this.members.size(); ++i) {
-			for(int j = 0; j < this.members.get(i).getCompetences().size(); ++i) {
+		for(int i = 0; i<this.members.size()-1; ++i) {
+			for(int j = 0; j < this.members.get(i).getCompetences().size()-1; ++i) {
 				if(s == this.members.get(i).getCompetences().get(j))
 					can.add(this.members.get(i));
 			}
