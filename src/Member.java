@@ -29,19 +29,32 @@ public abstract class Member {
 		this.jetons += sum;
 	}
 	
-	public void pay(int sum){
-		this.jetons -= sum;
+	public void pay(int sum) throws Exception{
+		if(this.jetons > sum)
+			this.jetons -= sum;
+		else
+			throw new Exception ("Not enough jetons");
 	}
 	
-	public void addCompetence(Service s){
-		competences.add(s);
+	public void addCompetence(Service s) throws Exception{
+		if(s != null)
+			competences.add(s);
+		else
+			throw new Exception ("No such service created");
 	}
 	
 	public ArrayList<Service> getCompetences(){
 		return this.competences;
 	}
-	public Task commandTask(Service s, int duration, int nbPerson){
-		return new Task(s, this, duration, nbPerson );
+	public Task commandTask(Service s, int duration, int nbPerson) throws Exception{
+		if (s == null)
+			throw new Exception ("No such service created");
+		if (duration <= 0)
+			throw new Exception ("Time invalid");
+		if (nbPerson <= 0)
+			throw new Exception ("Number of person invalid");
+		else
+			return new Task(s, this, duration, nbPerson );
 		
 	}
 }

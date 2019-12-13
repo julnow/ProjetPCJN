@@ -1,5 +1,18 @@
 
 public class Program {
+	
+	
+	public void execute (void instruction()){
+		try{
+			instruction();
+			
+		}
+		catch (Exception e){
+			System.out.println(e);
+			
+		}
+		
+	}
 
 	public static void main(String[] args) {
 		Admin admin = new Admin("admin", "admin123");
