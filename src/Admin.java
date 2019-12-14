@@ -33,10 +33,17 @@ public class Admin extends ClasseNormal {
 		}
 		
 		public void validateTask(Task t, Network n) {
-			if( t.getBeneficient().getJetons() >= t.payment()  && (t.getNbPerson() >= n.nbCompetence(t.getService())) ){
-				t.getBeneficient().pay(t.payment());
-				for(int i = 0; i < t.getNbPerson()-1; ++i)
+			if( t.getBeneficient().getJetons() >= t.payment()  && (t.getNbPerson() <= n.nbCompetence(t.getService())) ){
+				try{
+					t.getBeneficient().pay(t.payment());
+				}
+				catch(Exception e) {
+					System.out.println(e);
+				}
+				for(int i = 0; i < t.getNbPerson(); ++i)
 					this.chooseMembers(t, n).get(i).addJetons(t.salary());
+					
+					
 			}
 		}
 				
@@ -44,7 +51,7 @@ public class Admin extends ClasseNormal {
 		public ArrayList<Member> chooseMembers(Task t, Network n) {
 			ArrayList<Member> tmp = new ArrayList<Member>();
 			ArrayList<Member> competent = n.haveCompetence(t.getService());
-			for(int i = 0; i < t.getNbPerson()-1; ++i){
+			for(int i = 0; i < t.getNbPerson(); ++i){
 				int randomIndex = (int) Math.floor(Math.random()*competent.size()); //losuje index z competent
 				Member memberTmp = competent.get(randomIndex); //wybiera wylosowanego
 				tmp.add(memberTmp); //dodaje do pracujacych
