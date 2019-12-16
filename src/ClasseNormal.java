@@ -1,7 +1,7 @@
 
 public class ClasseNormal extends Member {
 	
-	public ClasseNormal(String name) {//
+	public ClasseNormal(String name) {
 		super(name);
 		classFactor = 1;
 	}
