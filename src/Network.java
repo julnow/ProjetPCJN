@@ -42,10 +42,10 @@ public class Network {
 		return this.members.size();
 	}
 	
-	public int nbCompetence (Service s) { // NIE DZIAŁA zwraca 0 zawsze chyba
+	public int nbCompetence (Service s) { 
 		int count = 0;
-		for(int i = 0; i<this.members.size() -1; ++i) {
-			for(int j = 0; j < this.members.get(i).getCompetences().size()-1; ++j) {
+		for(int i = 0; i<this.members.size(); ++i) {
+			for(int j = 0; j < this.members.get(i).getCompetences().size(); ++j) {
 				if(s == this.members.get(i).getCompetences().get(j))
 					++count;		
 			}	
@@ -56,8 +56,8 @@ public class Network {
 	
 	public ArrayList<Member> haveCompetence (Service s){
 		ArrayList<Member> can = new ArrayList<Member>();
-		for(int i = 0; i<this.members.size()-1; ++i) {
-			for(int j = 0; j < this.members.get(i).getCompetences().size()-1; ++i) {
+		for(int i = 0; i<this.members.size(); ++i) {
+			for(int j = 0; j < this.members.get(i).getCompetences().size(); ++j) {
 				if(s == this.members.get(i).getCompetences().get(j))
 					can.add(this.members.get(i));
 			}
