@@ -27,7 +27,7 @@ public class Network {
 		else{
 			boolean found = false;
 			while(!found) {
-				for(int i = 0; i < members.size()-1; ++i) {
+				for(int i = 0; i < members.size(); ++i) {
 					if (members.get(i).getName() == name) {
 						members.remove(i);
 						found = true;	
@@ -63,5 +63,13 @@ public class Network {
 			}
 		}
 		return can;
+	}
+	String usersMoney() {
+		String tmp = "";
+		for(int i = 0; i<this.members.size(); ++i) {
+			tmp += members.get(i).getName() + ": " + members.get(i).getJetons() +" ";
+		}
+		return tmp;
+		
 	}
 }
