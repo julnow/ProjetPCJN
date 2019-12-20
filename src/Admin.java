@@ -48,7 +48,7 @@ public class Admin extends ClasseNormal {
 		}
 				
 					
-		public ArrayList<Member> chooseMembers(Task t, Network n) {
+		private ArrayList<Member> chooseMembers(Task t, Network n) {
 			ArrayList<Member> tmp = new ArrayList<Member>();
 			ArrayList<Member> competent = n.haveCompetence(t.getService());
 			for(int i = 0; i < t.getNbPerson(); ++i){

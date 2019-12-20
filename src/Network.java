@@ -64,7 +64,7 @@ public class Network {
 		}
 		return can;
 	}
-	String usersMoney() {
+	public String usersMoney() {
 		String tmp = "";
 		for(int i = 0; i<this.members.size(); ++i) {
 			tmp += members.get(i).getName() + ": " + members.get(i).getJetons() +" ";
