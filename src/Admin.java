@@ -40,8 +40,9 @@ public class Admin extends ClasseNormal {
 				catch(Exception e) {
 					System.out.println(e);
 				}
+				ArrayList<Member> workers = this.chooseMembers(t, n);
 				for(int i = 0; i < t.getNbPerson(); ++i)
-					this.chooseMembers(t, n).get(i).addJetons(t.salary());
+					workers.get(i).addJetons(t.salary());
 					
 					
 			}
@@ -52,10 +53,10 @@ public class Admin extends ClasseNormal {
 			ArrayList<Member> tmp = new ArrayList<Member>();
 			ArrayList<Member> competent = n.haveCompetence(t.getService());
 			for(int i = 0; i < t.getNbPerson(); ++i){
-				int randomIndex = (int) Math.floor(Math.random()*competent.size()); //losuje index z competent
-				Member memberTmp = competent.get(randomIndex); //wybiera wylosowanego
-				tmp.add(memberTmp); //dodaje do pracujacych
-				competent.remove(randomIndex); // usuwa z listy losowania
+				int randomIndex = (int) Math.floor(Math.random()*competent.size()); //aleatoire index de competent list
+				Member memberTmp = competent.get(randomIndex); //choisir member avec randomIndex index
+				tmp.add(memberTmp); //ajouter a list de travaillers
+				competent.remove(randomIndex); // suppresion de list pour ne pas doubler les utilisateurs
 				
 			}
 			
