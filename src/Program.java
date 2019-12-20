@@ -4,7 +4,7 @@ public class Program {
 
 	public static void main(String[] args) {
 	
-		 //ajouter de  membres au reseau
+		 //ajouter des  membres au reseau
 		Admin admin = new Admin("admin", "admin123");
 		Member john = new ClasseNormal("john");
 		Member pablo = new ClasseZero("pablo");
